@@ -1,3 +1,44 @@
-[gd_scene format=3 uid="uid://h7rrcngqj6f7"]
+[gd_scene load_steps=7 format=3 uid="uid://h7rrcngqj6f7"]
+
+[ext_resource type="MeshLibrary" uid="uid://bfshcr2j80hm3" path="res://tiles.tres" id="1_t43xa"]
+[ext_resource type="PackedScene" uid="uid://b7ckhm33iw6w4" path="res://player.tscn" id="2_dkpn1"]
+[ext_resource type="PackedScene" uid="uid://b5buuwtkelcj" path="res://monster.tscn" id="3_6cscs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7cg64"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_jqtfs"]
+sky_material = SubResource("ProceduralSkyMaterial_7cg64")
+
+[sub_resource type="Environment" id="Environment_v4et6"]
+background_mode = 2
+sky = SubResource("Sky_jqtfs")
+ambient_light_color = Color(1, 0.94902, 0.8, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.02
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.02
+fog_density = 0.4
 
 [node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v4et6")
+
+[node name="Player" parent="." instance=ExtResource("2_dkpn1")]
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh_library = ExtResource("1_t43xa")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 65535, 2, 0, 0, 2, 65535, 0, 2, 65534, 1, 655361, 65533, 0, 655361, 65533, 65535, 1048577, 65534, 65534, 1048577, 65535, 65533, 1048576, 0, 65533, 1441792, 1, 65534, 1, 2, 65535, 1, 2, 0, 1441793, 1, 1, 1441793, 0, 2, 1441793, 65535, 2, 655361, 65535, 65535, 1441794, 0, 65532, 1441792, 0, 65531, 1441792, 0, 65530, 1441792, 0, 65529, 1441792, 0, 65528, 1441792, 65535, 65532, 1048576, 65535, 65531, 1048576, 65535, 65530, 1048576, 65535, 65529, 1048576, 65535, 65528, 1048576, 65535, 65527, 1048576, 0, 65527, 1441792, 1, 65535, 3, 1, 0, 1441795, 0, 1, 1441795, 65535, 1, 655363, 65534, 0, 655363, 65534, 65535, 1048579, 65535, 65534, 1048579, 0, 65534, 3, 0, 65526, 1441792, 0, 65525, 1441792, 65535, 65526, 1048576, 65535, 65525, 1048576, 65535, 65524, 655363, 0, 65523, 1048578, 0, 65522, 1048578, 65535, 65522, 1048578, 65535, 65523, 2, 0, 65524, 1441795, 1, 65524, 655360, 1, 65523, 1441794, 1, 65522, 1441794, 65534, 65523, 1441794, 65534, 65522, 1441794, 65534, 65524, 655360, 65533, 65524, 655360, 65532, 65523, 1048576, 65533, 65523, 1441794, 65533, 65522, 1441794, 65532, 65522, 1048576, 65532, 65524, 655361, 2, 65524, 1441793, 2, 65523, 1441792, 2, 65522, 1441792, 2, 65521, 1441792, 2, 65520, 1441792, 1, 65520, 1441794, 1, 65521, 1441794, 0, 65521, 1441794, 65535, 65521, 1441794, 65534, 65521, 1441794, 65533, 65521, 1441794, 65532, 65521, 1048576, 65533, 65520, 1441794, 65534, 65520, 1441794, 65535, 65520, 1441794, 0, 65520, 1441794, 65532, 65520, 1048576, 2, 65519, 1441792, 2, 65518, 1441792, 1, 65518, 1441794, 1, 65517, 0, 0, 65518, 1441794, 0, 65519, 1441794, 1, 65519, 1441794, 2, 65517, 1, 0, 65517, 0, 65535, 65517, 0, 65534, 65517, 0, 65533, 65517, 0, 65532, 65517, 1048577, 65532, 65518, 1048576, 65532, 65519, 1048576, 65533, 65519, 1441794, 65534, 65519, 1441794, 65535, 65519, 1441794, 65535, 65518, 1441794, 65534, 65518, 1441794, 65533, 65518, 1441794, 65533, 65525, 1441792, 65528, 65521, 1441792)
+}
+
+[node name="monster" parent="." instance=ExtResource("3_6cscs")]
+transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0.1, 0, -21.1)

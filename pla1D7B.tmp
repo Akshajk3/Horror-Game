@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7ckhm33iw6w4"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_trm0y"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_77sl2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_urb2x"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_trm0y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_77sl2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_urb2x")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0999999, 0)
+light_color = Color(1, 0.94902, 0.8, 1)

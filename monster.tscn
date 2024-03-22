@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5buuwtkelcj"]
+
+[ext_resource type="PackedScene" uid="uid://8yvt8f1gc8ut" path="res://model/chaotic_plague/scene.gltf" id="1_p3jn4"]
+
+[node name="monster" instance=ExtResource("1_p3jn4")]
+transform = Transform3D(0.004, 0, 0, 0, 0.004, 0, 0, 0, 0.004, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Sketchfab_model/b4fe0326b79b43be8198ba5987c53017_fbx/Object_2/RootNode/metarig/Object_6" index="0"]
+bones/6/rotation = Quaternion(-0.00380192, -4.7683e-07, 9.00177e-13, 0.999993)
+bones/9/rotation = Quaternion(0.00252271, 0.71703, -0.242268, 0.65358)
+bones/10/rotation = Quaternion(0.0289733, -0.0242906, -0.0181291, 0.999121)
+bones/14/rotation = Quaternion(0.399107, -0.39776, -0.27812, 0.777914)
+bones/17/rotation = Quaternion(-0.525936, 0.367291, 0.437842, 0.629907)
+bones/18/rotation = Quaternion(-0.00252285, 0.71703, -0.242269, -0.65358)
+bones/19/rotation = Quaternion(0.0289733, 0.0242906, 0.0181291, 0.999121)
+bones/20/rotation = Quaternion(0.0553899, -0.012776, -0.0656806, 0.99622)
+bones/27/rotation = Quaternion(0.024407, 1.09323e-10, 1.02978e-08, 0.999702)
+bones/28/rotation = Quaternion(-0.68469, -0.0280454, -0.0298074, 0.727684)
+bones/34/rotation = Quaternion(0.0244069, 1.09383e-10, -1.34034e-09, 0.999702)
+bones/35/rotation = Quaternion(-0.68469, 0.0280454, 0.0298074, 0.727685)
