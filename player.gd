@@ -60,8 +60,6 @@ func _physics_process(delta):
 	else:
 		camera.transform.origin = Vector3.ZERO
 	
-	print(transform.origin)
-	
 	move_and_slide()
 
 func _headbob(time) -> Vector3:
