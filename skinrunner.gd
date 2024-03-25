@@ -10,7 +10,7 @@ enum {
 	CHASE
 }
 
-var state = CHASE
+var state = IDLE
 
 func _physics_process(delta):
 	if state == CHASE:

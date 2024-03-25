@@ -9,7 +9,7 @@ const JUMP_VELOCITY = 4.5
 
 @export var MOUSE_SENS = 0.005
 
-var gravity = 20
+var gravity = 10
 
 const BOB_FREQ = 2.5
 const BOB_AMP = 0.08

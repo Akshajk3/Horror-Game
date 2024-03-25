@@ -48,7 +48,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2pge"]
 render_priority = 0
 shader = SubResource("Shader_ghx7x")
-shader_parameter/inner_alpha = 0.5
+shader_parameter/inner_alpha = 0.2
 shader_parameter/albedo_f = Color(0, 0.72549, 0.72549, 1)
 shader_parameter/Strength = 10.0
 
