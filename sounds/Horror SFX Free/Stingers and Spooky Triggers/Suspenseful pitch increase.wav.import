@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxcgbn6d0opvj"
+path="res://.godot/imported/Suspenseful pitch increase.wav-8201a81ad7aef92b50176de408fbd74f.sample"
+
+[deps]
+
+source_file="res://sounds/Horror SFX Free/Stingers and Spooky Triggers/Suspenseful pitch increase.wav"
+dest_files=["res://.godot/imported/Suspenseful pitch increase.wav-8201a81ad7aef92b50176de408fbd74f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

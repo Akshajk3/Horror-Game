@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf24gm5klgy2r"
+path="res://.godot/imported/Child laugh_7.wav-1c965fb4b346bc3abf6db4ce02ea5d51.sample"
+
+[deps]
+
+source_file="res://sounds/Horror SFX Free/Monsters & Ghosts/Child laugh_7.wav"
+dest_files=["res://.godot/imported/Child laugh_7.wav-1c965fb4b346bc3abf6db4ce02ea5d51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

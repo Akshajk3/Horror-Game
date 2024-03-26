@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7ckhm33iw6w4"]
+[gd_scene load_steps=9 format=3 uid="uid://b7ckhm33iw6w4"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_trm0y"]
+[ext_resource type="AudioStream" uid="uid://rxebdjr4s88h" path="res://sounds/breath/regular_breath.wav" id="2_1qj3t"]
+[ext_resource type="AudioStream" uid="uid://bhh6tmoem5mx6" path="res://sounds/Horror SFX Free/Ambient/Crying_moaning_ambience_2.wav" id="2_v1e4j"]
+[ext_resource type="AudioStream" uid="uid://cahvrtlrjo5ht" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_02.wav" id="4_voysj"]
+[ext_resource type="AudioStream" uid="uid://c73ceoup4qyoc" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_02.wav" id="5_0jlr8"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_77sl2"]
 lightmap_size_hint = Vector2i(17, 14)
@@ -38,3 +42,25 @@ spot_angle = 39.5931
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_vfeb3")
+
+[node name="breath_sfx" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_1qj3t")
+autoplay = true
+
+[node name="ambient_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v1e4j")
+volume_db = 20.0
+autoplay = true
+
+[node name="run_timer" type="Timer" parent="."]
+
+[node name="walk_timer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="footsteps_walk" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_voysj")
+
+[node name="footsteps_run" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_0jlr8")
+
+[connection signal="timeout" from="walk_timer" to="." method="_on_walk_timer_timeout"]

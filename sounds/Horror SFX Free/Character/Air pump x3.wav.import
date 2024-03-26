@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwgattjwnrvt3"
+path="res://.godot/imported/Air pump x3.wav-b7a22c94758e7ccda223381408c55be9.sample"
+
+[deps]
+
+source_file="res://sounds/Horror SFX Free/Character/Air pump x3.wav"
+dest_files=["res://.godot/imported/Air pump x3.wav-b7a22c94758e7ccda223381408c55be9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

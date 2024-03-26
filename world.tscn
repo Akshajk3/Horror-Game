@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://h7rrcngqj6f7"]
+[gd_scene load_steps=16 format=3 uid="uid://h7rrcngqj6f7"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_2qldv"]
 [ext_resource type="MeshLibrary" uid="uid://bfshcr2j80hm3" path="res://tiles.tres" id="1_t43xa"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://dyfxxtkqul46g" path="res://skinrunner.tscn" id="4_26wr5"]
 [ext_resource type="PackedScene" uid="uid://cff7t7rbhojce" path="res://collectro.tscn" id="5_3chfe"]
 [ext_resource type="Texture2D" uid="uid://cv81cidqnbmyp" path="res://textures/it_steals_map.jpg" id="6_wekwg"]
+[ext_resource type="Shader" path="res://chromatic_abberation.gdshader" id="7_knpda"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r47h"]
+shader = ExtResource("7_knpda")
+shader_parameter/alpha = 0.5
+shader_parameter/scale = 1.0
+shader_parameter/strength = 10.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7cg64"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,6 +49,17 @@ albedo_texture = ExtResource("6_wekwg")
 [node name="World" type="Node3D"]
 script = ExtResource("1_2qldv")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_7r47h")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v4et6")
 
@@ -63,22 +81,25 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Skinrunner" parent="." instance=ExtResource("4_26wr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.9812)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3862, 9.53674e-07, -11.4311)
 
 [node name="Collectors" type="Node3D" parent="."]
 visible = false
 
 [node name="collectro" parent="Collectors" instance=ExtResource("5_3chfe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02836, 1.26762, -32.8391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62633, 1.26762, -35.6708)
 
 [node name="collectro2" parent="Collectors" instance=ExtResource("5_3chfe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02836, 1.26762, -66.7391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.08607, 1.26762, -20.2736)
 
 [node name="collectro3" parent="Collectors" instance=ExtResource("5_3chfe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7716, 1.26762, -59.8391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3816, 1.26762, -19.4772)
 
 [node name="collectro4" parent="Collectors" instance=ExtResource("5_3chfe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97164, 1.26762, -47.3391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6278, 1.26762, -30.8038)
+
+[node name="collectro5" parent="Collectors" instance=ExtResource("5_3chfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2565, 1.26762, 1.40638)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)

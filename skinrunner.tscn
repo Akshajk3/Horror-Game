@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyfxxtkqul46g"]
+[gd_scene load_steps=7 format=3 uid="uid://dyfxxtkqul46g"]
 
 [ext_resource type="Script" path="res://skinrunner.gd" id="1_l6wk1"]
+[ext_resource type="AudioStream" uid="uid://dtcq7hmts6x6r" path="res://sounds/heartbeat/hearbeat-71701.mp3" id="2_io3dn"]
 [ext_resource type="PackedScene" uid="uid://b5buuwtkelcj" path="res://monster.tscn" id="2_theej"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i4gqp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fquyb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vi282"]
+radius = 10.0
 
 [node name="Skinrunner" type="CharacterBody3D"]
 script = ExtResource("1_l6wk1")
@@ -22,5 +26,19 @@ shape = SubResource("CapsuleShape3D_fquyb")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[node name="heartbeat" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_io3dn")
+autoplay = true
+
 [node name="monster" parent="." instance=ExtResource("2_theej")]
 transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_vi282")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
