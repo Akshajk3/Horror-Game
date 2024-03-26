@@ -13,7 +13,7 @@ enum {
 @export var state = IDLE
 var player_position
 
-@export var hunt_distance = 2.5
+@export var hunt_distance = 8
 
 func _physics_process(delta):
 	if state == CHASE:

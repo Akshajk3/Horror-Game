@@ -26,7 +26,6 @@ var walk_sound = true
 var sprinting = false
 
 func _unhandled_input(event):
-	print("hello")
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * MOUSE_SENS)
 		head.rotate_x(-event.relative.y * MOUSE_SENS)
