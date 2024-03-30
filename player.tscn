@@ -38,6 +38,8 @@ spot_range = 30.7982
 spot_angle = 39.5931
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -49,7 +51,7 @@ autoplay = true
 
 [node name="ambient_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_v1e4j")
-volume_db = 20.0
+volume_db = 10.0
 autoplay = true
 
 [node name="run_timer" type="Timer" parent="."]

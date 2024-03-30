@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cff7t7rbhojce"]
+[gd_scene load_steps=7 format=3 uid="uid://cff7t7rbhojce"]
 
 [ext_resource type="Script" path="res://collectro.gd" id="1_bjmo1"]
+[ext_resource type="AudioStream" uid="uid://b02mvg1a2w28i" path="res://sounds/pickup/Jump3.wav" id="2_nvlcy"]
 
 [sub_resource type="Shader" id="Shader_ghx7x"]
 code = "shader_type spatial;
@@ -64,6 +65,8 @@ script = ExtResource("1_bjmo1")
 mesh = SubResource("SphereMesh_41xkh")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_i1peu")
@@ -72,4 +75,8 @@ shape = SubResource("SphereShape3D_i1peu")
 light_color = Color(0, 0.72549, 0.72549, 1)
 light_energy = 16.0
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_nvlcy")
+
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

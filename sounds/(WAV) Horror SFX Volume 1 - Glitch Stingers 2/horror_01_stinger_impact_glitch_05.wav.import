@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dejudjhshilqh"
+path="res://.godot/imported/horror_01_stinger_impact_glitch_05.wav-df1c714366f9aa6799ccd3ff1c7b37e6.sample"
+
+[deps]
+
+source_file="res://sounds/(WAV) Horror SFX Volume 1 - Glitch Stingers 2/horror_01_stinger_impact_glitch_05.wav"
+dest_files=["res://.godot/imported/horror_01_stinger_impact_glitch_05.wav-df1c714366f9aa6799ccd3ff1c7b37e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
