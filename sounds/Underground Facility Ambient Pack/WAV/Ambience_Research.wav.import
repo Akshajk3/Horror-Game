@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8yjofaen2g0e"
+path="res://.godot/imported/Ambience_Research.wav-a7714085df9934f2044a17089ec67f95.sample"
+
+[deps]
+
+source_file="res://sounds/Underground Facility Ambient Pack/WAV/Ambience_Research.wav"
+dest_files=["res://.godot/imported/Ambience_Research.wav-a7714085df9934f2044a17089ec67f95.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

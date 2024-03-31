@@ -8175,9 +8175,10 @@ libraries = {
 "": SubResource("AnimationLibrary_20p4p")
 }
 autoplay = "idle"
-speed_scale = 4.0
 
 [node name="Chase Cooldown" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 
 [node name="Chase Timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -8188,5 +8189,6 @@ one_shot = true
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="timeout" from="Chase Cooldown" to="." method="_on_chase_cooldown_timeout"]
 [connection signal="timeout" from="Chase Timer" to="." method="_on_chase_timer_timeout"]
 [connection signal="timeout" from="Wander Timer" to="." method="_on_wander_timer_timeout"]

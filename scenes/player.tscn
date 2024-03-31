@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Hand.gd" id="2_etc1f"]
 [ext_resource type="PackedScene" uid="uid://bhwa5upchyom1" path="res://scenes/flashlight_model.tscn" id="3_m5h6p"]
 [ext_resource type="AudioStream" uid="uid://dootfc4r2ddao" path="res://sounds/Horror SFX Free/Character/Breathing_fast.wav" id="4_0ee5k"]
-[ext_resource type="AudioStream" uid="uid://bhh6tmoem5mx6" path="res://sounds/Horror SFX Free/Ambient/Crying_moaning_ambience_2.wav" id="5_5kbnc"]
+[ext_resource type="AudioStream" uid="uid://ckj1aw1ukgrk5" path="res://sounds/Underground Facility Ambient Pack/WAV/Ambience_Cell.wav" id="5_6d0wm"]
 [ext_resource type="AudioStream" uid="uid://cahvrtlrjo5ht" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_02.wav" id="6_aaynb"]
 [ext_resource type="AudioStream" uid="uid://c73ceoup4qyoc" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_02.wav" id="7_77w5t"]
 [ext_resource type="AudioStream" uid="uid://hua6w5ck6ixy" path="res://sounds/flashlight/flashlight_on.wav" id="8_mq7mq"]
@@ -98,7 +98,8 @@ stream = ExtResource("4_0ee5k")
 autoplay = true
 
 [node name="ambient_sfx" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_5kbnc")
+stream = ExtResource("5_6d0wm")
+volume_db = -20.0
 autoplay = true
 
 [node name="run_timer" type="Timer" parent="."]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhk5lva1ppmvf"
+path="res://.godot/imported/Ambience_Janitory.ogg-0b0cc9c46a36fa1c49f1964e63689309.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Underground Facility Ambient Pack/OGG/Ambience_Janitory.ogg"
+dest_files=["res://.godot/imported/Ambience_Janitory.ogg-0b0cc9c46a36fa1c49f1964e63689309.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

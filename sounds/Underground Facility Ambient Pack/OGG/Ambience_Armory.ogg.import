@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://i5of6krpfrtn"
+path="res://.godot/imported/Ambience_Armory.ogg-99d06d5b83ebf7db973103816aa1f02a.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Underground Facility Ambient Pack/OGG/Ambience_Armory.ogg"
+dest_files=["res://.godot/imported/Ambience_Armory.ogg-99d06d5b83ebf7db973103816aa1f02a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
