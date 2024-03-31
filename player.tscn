@@ -4,9 +4,9 @@
 [ext_resource type="AudioStream" uid="uid://rxebdjr4s88h" path="res://sounds/breath/regular_breath.wav" id="2_1qj3t"]
 [ext_resource type="PackedScene" uid="uid://bhwa5upchyom1" path="res://flashlight_model.tscn" id="2_a133a"]
 [ext_resource type="Script" path="res://Hand.gd" id="2_dvl7k"]
-[ext_resource type="AudioStream" uid="uid://bhh6tmoem5mx6" path="res://sounds/Horror SFX Free/Ambient/Crying_moaning_ambience_2.wav" id="2_v1e4j"]
 [ext_resource type="AudioStream" uid="uid://cahvrtlrjo5ht" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_02.wav" id="4_voysj"]
 [ext_resource type="AudioStream" uid="uid://c73ceoup4qyoc" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_02.wav" id="5_0jlr8"]
+[ext_resource type="AudioStream" uid="uid://cgl3c3ftfstdb" path="res://sounds/ambiance/Crying_moaning_ambience_2.wav" id="5_vnppv"]
 [ext_resource type="AudioStream" uid="uid://hua6w5ck6ixy" path="res://sounds/flashlight/flashlight_on.wav" id="7_8idnq"]
 [ext_resource type="AudioStream" uid="uid://d3weq467ony64" path="res://sounds/flashlight/flashlight_off.wav" id="8_oopub"]
 
@@ -73,6 +73,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Hand" type="Node3D" parent="Head"]
 script = ExtResource("2_dvl7k")
+sway_left = Vector3(0, 0.25, 0)
+sway_right = Vector3(0, -0.25, 0)
 
 [node name="flashlight_model" parent="Head/Hand" instance=ExtResource("2_a133a")]
 transform = Transform3D(-100, 0, -8.74228e-06, 0, 100, 0, 8.74228e-06, 0, -100, 0.3, -0.4, -0.7)
@@ -96,8 +98,9 @@ shape = SubResource("CapsuleShape3D_vfeb3")
 stream = ExtResource("2_1qj3t")
 autoplay = true
 
-[node name="ambient_sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_v1e4j")
+[node name="ambient_sfx" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_vnppv")
+volume_db = -30.0
 autoplay = true
 
 [node name="run_timer" type="Timer" parent="."]

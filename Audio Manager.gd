@@ -21,7 +21,7 @@ func play_sound(stream: AudioStream):
 
 func remove_node(instance: AudioStreamPlayer3D):
 	instance.queue_free()
-	timer.wait_time = get_random_time(0, 10)
+	timer.wait_time = get_random_time(0, 20)
 
 func _on_stinger_timer_timeout():
 	play_sound(stream)

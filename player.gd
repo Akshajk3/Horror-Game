@@ -7,7 +7,7 @@ extends CharacterBody3D
 @onready var walk_timer = $walk_timer
 @onready var breath = $breath_sfx
 @onready var animation_player = $AnimationPlayer
-@onready var flashlight = $Head/flashlight_model/flashlight
+@onready var flashlight = $Head/Hand/flashlight_model/flashlight
 @onready var flash_on = $flash_on
 @onready var flash_off = $flash_off
 
