@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbx4cn3pxv8vy"
+path="res://.godot/imported/Japanese-Style Horror SFX (48).wav-cca51a7ef2f8d5f96ef6ee41d09f32f8.sample"
+
+[deps]
+
+source_file="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (48).wav"
+dest_files=["res://.godot/imported/Japanese-Style Horror SFX (48).wav-cca51a7ef2f8d5f96ef6ee41d09f32f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

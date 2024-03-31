@@ -1,0 +1,369 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 148,
+      "max": [
+        1.4045449495315552,
+        1.4045449495315552,
+        7.374658107757568
+      ],
+      "min": [
+        -1.4045449495315552,
+        -1.4045449495315552,
+        -3.609066963195801
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1776,
+      "componentType": 5126,
+      "count": 148,
+      "max": [
+        0.9725620746612549,
+        0.9725620746612549,
+        0.8042735457420349
+      ],
+      "min": [
+        -0.9725620746612549,
+        -0.9725620746612549,
+        -0.6304365396499634
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 148,
+      "max": [
+        0.958984375,
+        0.97705078125
+      ],
+      "min": [
+        0.452392578125,
+        0.07489013671875
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 294,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 3552,
+      "componentType": 5126,
+      "count": 8,
+      "max": [
+        1.100445032119751,
+        1.100445032119751,
+        7.260354995727539
+      ],
+      "min": [
+        -1.100445032119751,
+        -1.100445032119751,
+        7.260354995727539
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 3648,
+      "componentType": 5126,
+      "count": 8,
+      "max": [
+        0.7763230204582214,
+        0.7763230204582214,
+        0.6304365396499634
+      ],
+      "min": [
+        -0.7763230204582214,
+        -0.7763230204582214,
+        0.63033527135849
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1184,
+      "componentType": 5126,
+      "count": 8,
+      "max": [
+        0.87060546875,
+        0.8544921875
+      ],
+      "min": [
+        0.099853515625,
+        0.12841796875
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1176,
+      "componentType": 5125,
+      "count": 18,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "liltoba (https://sketchfab.com/liltoba)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/flash-light-psx-low-poly-1a7235fad65646a9bafb21bc7c40467a",
+      "title": "Flash Light Psx | Low Poly"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1248,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1248,
+      "byteOffset": 1248,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3744,
+      "byteOffset": 2496,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 6240,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/BuildersTorch_Albedo_baseColor.png"
+    },
+    {
+      "uri": "textures/BuildersTorch_Albedo_1_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "BuildersTorch_Albedo",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "BuildersTorch_Albedo_1",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9577051494623774
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Flash Light_BuildersTorch_Albedo_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Flash Light_BuildersTorch_Albedo 1_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Flash Light.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        7.050000190734863,
+        -29.25,
+        1.0
+      ],
+      "name": "PlayerCamera"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "ItemCamera"
+    },
+    {
+      "children": [
+        6
+      ],
+      "name": "ItemHolder"
+    },
+    {
+      "children": [
+        7,
+        8
+      ],
+      "matrix": [
+        0.0,
+        0.0689428299665451,
+        0.0,
+        0.0,
+        -0.06894282996654026,
+        0.0,
+        2.5819572184085503e-08,
+        0.0,
+        2.5819574974380065e-08,
+        0.0,
+        0.06894283741712086,
+        0.0,
+        0.4449999928474426,
+        -0.40400001406669617,
+        0.24100112915039063,
+        1.0
+      ],
+      "name": "Flash Light"
+    },
+    {
+      "mesh": 0,
+      "name": "Flash Light_BuildersTorch_Albedo_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Flash Light_BuildersTorch_Albedo 1_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}

@@ -6,6 +6,10 @@ extends CharacterBody3D
 @onready var footsteps_run = $footsteps_run
 @onready var walk_timer = $walk_timer
 @onready var breath = $breath_sfx
+@onready var animation_player = $AnimationPlayer
+@onready var flashlight = $Head/flashlight_model/flashlight
+@onready var flash_on = $flash_on
+@onready var flash_off = $flash_off
 
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 7.0
@@ -24,6 +28,8 @@ var speed = WALK_SPEED
 var walk_sound = true
 
 var sprinting = false
+
+var light = true
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -79,11 +85,25 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	
+	if Input.is_action_just_pressed("light"):
+		light = !light
+		flash_on.stop()
+		flash_off.stop()
+		if light:
+			flash_on.play()
+			flashlight.show()
+		else:
+			flash_off.play()
+			flashlight.hide()
+		
+	
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	if direction:
+		animation_player.stop()
 		camera.transform.origin = _headbob(t_bob)
-	else:
+	elif not animation_player.current_animation == "idle":
 		camera.transform.origin = Vector3.ZERO
+		animation_player.play("idle")
 	
 	move_and_slide()
 

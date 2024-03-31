@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3q6fcxv5ne2y"
+path="res://.godot/imported/vox_Lament6.wav-b60ab869ea4900867f8540ef97d8cec8.sample"
+
+[deps]
+
+source_file="res://sounds/PF Ghost Voices Pack/vox_Lament6.wav"
+dest_files=["res://.godot/imported/vox_Lament6.wav-b60ab869ea4900867f8540ef97d8cec8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

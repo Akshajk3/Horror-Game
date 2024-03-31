@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq7niolrv2ijc"]
+
+[ext_resource type="PackedScene" uid="uid://7typ2jgxaf2j" path="res://model/hands/Player_Arms.fbx" id="1_f47d6"]
+
+[node name="Root Scene" instance=ExtResource("1_f47d6")]

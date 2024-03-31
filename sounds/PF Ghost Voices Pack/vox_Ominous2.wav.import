@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ck25tjrftgqny"
+path="res://.godot/imported/vox_Ominous2.wav-f274d6432472d2139bbb8e63e3ca0edc.sample"
+
+[deps]
+
+source_file="res://sounds/PF Ghost Voices Pack/vox_Ominous2.wav"
+dest_files=["res://.godot/imported/vox_Ominous2.wav-f274d6432472d2139bbb8e63e3ca0edc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

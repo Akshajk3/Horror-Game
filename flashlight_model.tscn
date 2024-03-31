@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhwa5upchyom1"]
+
+[ext_resource type="PackedScene" uid="uid://cx36jjwgmwohh" path="res://model/flashlight/flash_light_psx__low_poly/scene.gltf" id="1_0max6"]
+
+[node name="flashlight_model" instance=ExtResource("1_0max6")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="PlayerCamera" parent="Sketchfab_model/Flash Light_fbx/RootNode" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Flash Light" parent="Sketchfab_model/Flash Light_fbx/RootNode/PlayerCamera/ItemCamera/ItemHolder" index="0"]
+transform = Transform3D(0, -0.0689428, 2.58196e-08, 0.0689428, 0, 0, 0, 2.58196e-08, 0.0689428, 0, 0, 0)
