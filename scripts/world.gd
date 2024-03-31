@@ -15,12 +15,3 @@ func _physics_process(delta):
 	
 	if collectors.get_child_count() == 0:
 		get_tree().quit()
-	
-
-func get_random_position():
-	var map = nav_mesh.get_navigation_map()
-	var random_position = Vector3(player.position.x + randf_range(-12, 12), player.position.y, player.position.z + randf_range(-12, 12))
-	random_position = NavigationServer3D.map_get_closest_point(map, random_position)
-	print(random_position)
-	return random_position
-

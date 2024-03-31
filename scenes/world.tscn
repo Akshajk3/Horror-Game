@@ -1,13 +1,13 @@
-[gd_scene load_steps=53 format=3 uid="uid://h7rrcngqj6f7"]
+[gd_scene load_steps=59 format=3 uid="uid://h7rrcngqj6f7"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_2qldv"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_2qldv"]
 [ext_resource type="MeshLibrary" uid="uid://bfshcr2j80hm3" path="res://tiles.tres" id="1_t43xa"]
-[ext_resource type="PackedScene" uid="uid://b7ckhm33iw6w4" path="res://player.tscn" id="2_dkpn1"]
-[ext_resource type="PackedScene" uid="uid://dyfxxtkqul46g" path="res://skinrunner.tscn" id="4_26wr5"]
-[ext_resource type="PackedScene" uid="uid://cff7t7rbhojce" path="res://collectro.tscn" id="5_3chfe"]
+[ext_resource type="PackedScene" uid="uid://b7ckhm33iw6w4" path="res://scenes/player.tscn" id="2_dkpn1"]
+[ext_resource type="PackedScene" uid="uid://dyfxxtkqul46g" path="res://scenes/skinrunner.tscn" id="4_26wr5"]
+[ext_resource type="PackedScene" uid="uid://cff7t7rbhojce" path="res://scenes/collectro.tscn" id="5_3chfe"]
 [ext_resource type="Texture2D" uid="uid://cv81cidqnbmyp" path="res://textures/it_steals_map.jpg" id="6_wekwg"]
-[ext_resource type="Shader" path="res://chromatic_abberation.gdshader" id="7_knpda"]
-[ext_resource type="Script" path="res://Audio Manager.gd" id="8_q6pdn"]
+[ext_resource type="Shader" path="res://shaders/chromatic_abberation.gdshader" id="7_knpda"]
+[ext_resource type="Script" path="res://scripts/Audio Manager.gd" id="8_q6pdn"]
 [ext_resource type="AudioStream" uid="uid://de3w3wu3fw881" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (78).wav" id="9_3dewc"]
 [ext_resource type="AudioStream" uid="uid://codgxoejef82p" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (77).wav" id="10_1wf15"]
 [ext_resource type="AudioStream" uid="uid://bsnonkrg4fhrl" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (68).wav" id="11_ns6dp"]
@@ -43,6 +43,12 @@
 [ext_resource type="AudioStream" uid="uid://68c55ghmergn" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (3).wav" id="35_fetnu"]
 [ext_resource type="AudioStream" uid="uid://np8p8lfk1al2" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (2).wav" id="36_jo6ms"]
 [ext_resource type="AudioStream" uid="uid://sx8hm3a608x0" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (1).wav" id="37_r8hyk"]
+[ext_resource type="AudioStream" uid="uid://chmf1eqwakten" path="res://sounds/Horror SFX Free/Ambient/Drone_doom.wav" id="38_r1t0j"]
+[ext_resource type="AudioStream" uid="uid://bwy5k6gw2rdjr" path="res://sounds/Horror SFX Free/Ambient/Tap_reverb.wav" id="39_vdy80"]
+[ext_resource type="AudioStream" uid="uid://g1p5irejcfld" path="res://sounds/Horror SFX Free/Ambient/Old House_creeky metal and wood_ambiance_7.wav" id="40_tywfp"]
+[ext_resource type="AudioStream" uid="uid://b1jubvh1fxnie" path="res://sounds/Horror SFX Free/Stingers and Spooky Triggers/Scratch_high pitch.wav" id="41_l2jao"]
+[ext_resource type="AudioStream" uid="uid://be45e4mm1g5fp" path="res://sounds/Horror SFX Free/Monsters & Ghosts/Gore_mushy.wav" id="44_eq1c3"]
+[ext_resource type="AudioStream" uid="uid://hfkstcocs448" path="res://sounds/Horror SFX Free/House & Office/Slow crank.wav" id="45_coxet"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7r47h"]
 shader = ExtResource("7_knpda")
@@ -86,7 +92,7 @@ albedo_texture = ExtResource("6_wekwg")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_blk48"]
 playback_mode = 1
-streams_count = 35
+streams_count = 41
 stream_0/stream = ExtResource("9_3dewc")
 stream_0/weight = 1.0
 stream_1/stream = ExtResource("10_1wf15")
@@ -157,6 +163,18 @@ stream_33/stream = ExtResource("36_jo6ms")
 stream_33/weight = 1.0
 stream_34/stream = ExtResource("37_r8hyk")
 stream_34/weight = 1.0
+stream_35/stream = ExtResource("38_r1t0j")
+stream_35/weight = 1.0
+stream_36/stream = ExtResource("39_vdy80")
+stream_36/weight = 1.0
+stream_37/stream = ExtResource("40_tywfp")
+stream_37/weight = 1.0
+stream_38/stream = ExtResource("41_l2jao")
+stream_38/weight = 1.0
+stream_39/stream = ExtResource("44_eq1c3")
+stream_39/weight = 1.0
+stream_40/stream = ExtResource("45_coxet")
+stream_40/weight = 1.0
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_2qldv")
@@ -179,10 +197,10 @@ environment = SubResource("Environment_v4et6")
 [node name="Player" parent="." instance=ExtResource("2_dkpn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1097, 0.556846, -8.2883)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="nav" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_flh3a")
 
-[node name="it steals map" type="GridMap" parent="NavigationRegion3D"]
+[node name="it steals map" type="GridMap" parent="nav"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh_library = ExtResource("1_t43xa")
 physics_material = SubResource("PhysicsMaterial_5ojmh")
@@ -194,7 +212,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Skinrunner" parent="." instance=ExtResource("4_26wr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8957, 9.53674e-07, -41.4229)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6957, 9.53674e-07, -4.2229)
 
 [node name="Collectors" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.5, 0)

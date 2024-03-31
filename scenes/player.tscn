@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://b7ckhm33iw6w4"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_trm0y"]
-[ext_resource type="AudioStream" uid="uid://rxebdjr4s88h" path="res://sounds/breath/regular_breath.wav" id="2_1qj3t"]
-[ext_resource type="PackedScene" uid="uid://bhwa5upchyom1" path="res://flashlight_model.tscn" id="2_a133a"]
-[ext_resource type="Script" path="res://Hand.gd" id="2_dvl7k"]
-[ext_resource type="AudioStream" uid="uid://cahvrtlrjo5ht" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_02.wav" id="4_voysj"]
-[ext_resource type="AudioStream" uid="uid://c73ceoup4qyoc" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_02.wav" id="5_0jlr8"]
-[ext_resource type="AudioStream" uid="uid://cgl3c3ftfstdb" path="res://sounds/ambiance/Crying_moaning_ambience_2.wav" id="5_vnppv"]
-[ext_resource type="AudioStream" uid="uid://hua6w5ck6ixy" path="res://sounds/flashlight/flashlight_on.wav" id="7_8idnq"]
-[ext_resource type="AudioStream" uid="uid://d3weq467ony64" path="res://sounds/flashlight/flashlight_off.wav" id="8_oopub"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_uo2dx"]
+[ext_resource type="Script" path="res://scripts/Hand.gd" id="2_etc1f"]
+[ext_resource type="PackedScene" uid="uid://bhwa5upchyom1" path="res://scenes/flashlight_model.tscn" id="3_m5h6p"]
+[ext_resource type="AudioStream" uid="uid://dootfc4r2ddao" path="res://sounds/Horror SFX Free/Character/Breathing_fast.wav" id="4_0ee5k"]
+[ext_resource type="AudioStream" uid="uid://bhh6tmoem5mx6" path="res://sounds/Horror SFX Free/Ambient/Crying_moaning_ambience_2.wav" id="5_5kbnc"]
+[ext_resource type="AudioStream" uid="uid://cahvrtlrjo5ht" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Walk/Footsteps_Rock_Walk_02.wav" id="6_aaynb"]
+[ext_resource type="AudioStream" uid="uid://c73ceoup4qyoc" path="res://sounds/Footsteps_Rock/Footsteps_Rock_Run/Footsteps_Rock_Run_02.wav" id="7_77w5t"]
+[ext_resource type="AudioStream" uid="uid://hua6w5ck6ixy" path="res://sounds/flashlight/flashlight_on.wav" id="8_mq7mq"]
+[ext_resource type="AudioStream" uid="uid://d3weq467ony64" path="res://sounds/flashlight/flashlight_off.wav" id="9_ilf6a"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_77sl2"]
 lightmap_size_hint = Vector2i(17, 14)
@@ -56,7 +56,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_trm0y")
+script = ExtResource("1_uo2dx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -72,11 +72,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
 [node name="Hand" type="Node3D" parent="Head"]
-script = ExtResource("2_dvl7k")
+script = ExtResource("2_etc1f")
 sway_left = Vector3(0, 0.25, 0)
 sway_right = Vector3(0, -0.25, 0)
 
-[node name="flashlight_model" parent="Head/Hand" instance=ExtResource("2_a133a")]
+[node name="flashlight_model" parent="Head/Hand" instance=ExtResource("3_m5h6p")]
 transform = Transform3D(-100, 0, -8.74228e-06, 0, 100, 0, 8.74228e-06, 0, -100, 0.3, -0.4, -0.7)
 
 [node name="flashlight" type="SpotLight3D" parent="Head/Hand/flashlight_model"]
@@ -84,7 +84,6 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -5.245
 light_color = Color(1, 0.94902, 0.8, 1)
 light_energy = 16.0
 spot_range = 30.7982
-spot_angle = 39.5931
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 3
@@ -95,12 +94,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_vfeb3")
 
 [node name="breath_sfx" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_1qj3t")
+stream = ExtResource("4_0ee5k")
 autoplay = true
 
 [node name="ambient_sfx" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_vnppv")
-volume_db = -30.0
+stream = ExtResource("5_5kbnc")
 autoplay = true
 
 [node name="run_timer" type="Timer" parent="."]
@@ -109,10 +107,10 @@ autoplay = true
 wait_time = 0.6
 
 [node name="footsteps_walk" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_voysj")
+stream = ExtResource("6_aaynb")
 
 [node name="footsteps_run" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_0jlr8")
+stream = ExtResource("7_77w5t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -121,9 +119,9 @@ libraries = {
 autoplay = "idle"
 
 [node name="flash_on" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_8idnq")
+stream = ExtResource("8_mq7mq")
 
 [node name="flash_off" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_oopub")
+stream = ExtResource("9_ilf6a")
 
 [connection signal="timeout" from="walk_timer" to="." method="_on_walk_timer_timeout"]
