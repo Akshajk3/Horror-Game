@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var wander_timer = $"Wander Timer"
 
 const SPEED = 6.0
-const ACCEL = 10.0
+const ACCEL = 2.0
 
 enum {
 	IDLE,
@@ -27,6 +27,8 @@ var player_position : Vector3
 var moving = false
 var world_env : WorldEnvironment
 var env : Environment
+var wander_position : Vector3
+var arrived = false
 
 func _ready():
 	world_env = get_parent().get_node("WorldEnvironment")
@@ -59,14 +61,16 @@ func chase(delta):
 	move_and_slide()
 
 func move_to_random_position(delta):
-	print("moving")
 	moving = true
 	var direction = Vector3()
 	
-	nav_agent.target_position = get_random_point()
+	nav_agent.target_position = wander_position
 	
 	direction = nav_agent.get_next_path_position() - global_position
 	direction = direction.normalized()
+	
+	look_at(nav_agent.get_next_path_position(), Vector3.UP)
+	
 	velocity = velocity.lerp(direction * SPEED, ACCEL * delta)
 	
 	move_and_slide()
@@ -79,11 +83,18 @@ func idle():
 		animation_player.play("idle")
 
 func wander(delta):
-	move_to_random_position(delta)
+	if wander_position != Vector3.ZERO and arrived == false:
+		move_to_random_position(delta)
+	if moving:
+		if animation_player.current_animation != "run":
+			animation_player.play("run")
+	else:
+		if animation_player.current_animation != "idle":
+			animation_player.play("idle")
 
 func get_random_point():
 	var map_rid = get_world_3d().navigation_map
-	var random_point = Vector3(randf_range(0, 25), randf_range(0, 25), randf_range(0, 25))
+	var random_point = Vector3(randf_range(-75, 60), randf_range(0, 25), randf_range(-65, 70))
 	random_point = NavigationServer3D.map_get_closest_point(map_rid, random_point)
 	return random_point
 
@@ -110,11 +121,13 @@ func _on_chase_timer_timeout():
 	stop_chase()
 
 func _on_wander_timer_timeout():
-	#move_to_random_position()
-	pass
+	wander_position = get_random_point()
+	arrived = false
 
 func _on_navigation_agent_3d_target_reached():
 	moving = false
+	arrived = true
+	wander_timer.start()
 
 func _on_chase_cooldown_timeout():
 	start_chase()

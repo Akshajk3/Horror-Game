@@ -212,9 +212,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Skinrunner" parent="." instance=ExtResource("4_26wr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6957, 9.53674e-07, -4.2229)
-hunt_distance = 8
-default_color = Color(0, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1256, 9.53674e-07, -12.7543)
 
 [node name="Collectors" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.5, 0)
