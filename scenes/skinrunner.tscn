@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dyfxxtkqul46g"]
+[gd_scene load_steps=30 format=3 uid="uid://dyfxxtkqul46g"]
 
 [ext_resource type="Script" path="res://scripts/skinrunner.gd" id="1_ltso2"]
 [ext_resource type="AudioStream" uid="uid://dtcq7hmts6x6r" path="res://sounds/heartbeat/hearbeat-71701.mp3" id="2_87jej"]
@@ -7686,6 +7686,9 @@ _data = {
 "upper_arm_R_015|metarig|T-Pose": SubResource("Animation_cnq0l")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_k2j7h"]
+size = Vector3(1, 4.26794, 2.20496)
+
 [node name="Skinrunner" type="CharacterBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
@@ -8190,8 +8193,19 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
+[node name="Sound Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Kill Area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23397, 1.35052)
+shape = SubResource("BoxShape3D_k2j7h")
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="timeout" from="Chase Cooldown" to="." method="_on_chase_cooldown_timeout"]
 [connection signal="timeout" from="Chase Timer" to="." method="_on_chase_timer_timeout"]
 [connection signal="timeout" from="Wander Timer" to="." method="_on_wander_timer_timeout"]
+[connection signal="timeout" from="Sound Timer" to="." method="_on_sound_timer_timeout"]
+[connection signal="area_entered" from="Kill Area" to="." method="_on_kill_area_area_entered"]

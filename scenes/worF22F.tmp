@@ -292,11 +292,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="HUD"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_right = 0.2125
+anchor_bottom = 0.17037
 grow_horizontal = 2
-text = "Items Left:11"
+grow_vertical = 2
+text = "hel"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Audio Manager/Stinger Timer" to="Audio Manager" method="_on_stinger_timer_timeout"]
 [connection signal="finished" from="Deathsound" to="." method="_on_deathsound_finished"]

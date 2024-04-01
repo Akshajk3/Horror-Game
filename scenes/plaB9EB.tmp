@@ -57,6 +57,11 @@ _data = {
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_uo2dx")
+MOUSE_SENS = null
+base_sound_level = null
+max_sound_level = null
+current_sound_level = null
+change_in_sound_level = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -99,7 +104,7 @@ autoplay = true
 
 [node name="ambient_sfx" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_6d0wm")
-volume_db = -25.0
+volume_db = -20.0
 autoplay = true
 
 [node name="run_timer" type="Timer" parent="."]

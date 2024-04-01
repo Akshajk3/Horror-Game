@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal too_loud(current_position)
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var footsteps = $footsteps_walk
@@ -16,6 +18,12 @@ const SPRINT_SPEED = 7.0
 const JUMP_VELOCITY = 4.5
 
 @export var MOUSE_SENS = 0.005
+
+@export var base_sound_level = 0.0
+@export var max_sound_level = 1.0
+@export var current_sound_level = 0.0
+@export var change_in_sound_level = 0.01
+@export var sound_threshold = 0.8
 
 var gravity = 10
 
@@ -95,7 +103,16 @@ func _physics_process(delta):
 		else:
 			flash_off.play()
 			flashlight.hide()
-		
+	
+	if sprinting:
+		current_sound_level += change_in_sound_level
+	else:
+		current_sound_level -= change_in_sound_level
+	
+	current_sound_level = clamp(current_sound_level, base_sound_level, max_sound_level)
+	
+	if current_sound_level >= sound_threshold:
+		too_loud.emit(transform.origin)
 	
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	if direction:

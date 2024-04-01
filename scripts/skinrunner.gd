@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal die()
+
 @onready var nav_agent = $NavigationAgent3D
 @onready var impact_sound = $"impact sound"
 @onready var footstep_sound = $footsteps
@@ -7,6 +9,7 @@ extends CharacterBody3D
 @onready var chase_timer = $"Chase Timer"
 @onready var light = $OmniLight3D
 @onready var wander_timer = $"Wander Timer"
+@onready var sound_timer = $"Sound Timer"
 
 const SPEED = 6.0
 const ACCEL = 2.0
@@ -14,7 +17,8 @@ const ACCEL = 2.0
 enum {
 	IDLE,
 	CHASE,
-	WANDER
+	WANDER,
+	SOUND
 }
 
 @export var state = WANDER
@@ -29,6 +33,8 @@ var world_env : WorldEnvironment
 var env : Environment
 var wander_position : Vector3
 var arrived = false
+var sound_source : Vector3
+var can_hear = true
 
 func _ready():
 	world_env = get_parent().get_node("WorldEnvironment")
@@ -40,6 +46,8 @@ func _physics_process(delta):
 		chase(delta)
 	elif state == WANDER:
 		wander(delta)
+	elif state == SOUND:
+		sound()
 	elif state == IDLE:
 		idle()
 
@@ -69,11 +77,36 @@ func move_to_random_position(delta):
 	direction = nav_agent.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
-	look_at(nav_agent.get_next_path_position(), Vector3.UP)
+	look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
 	
 	velocity = velocity.lerp(direction * SPEED, ACCEL * delta)
 	
 	move_and_slide()
+
+func sound():
+	if arrived:
+		state = WANDER
+	else:
+		investigate_sound()
+		animation_player.play("run")
+
+func investigate_sound():
+	moving = true
+	var direction = Vector3()
+	
+	nav_agent.target_position = sound_source
+	direction = nav_agent.get_next_path_position() - global_position
+	direction = direction.normalized()
+	
+	look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
+	
+	velocity = velocity.lerp(direction * SPEED, ACCEL * get_physics_process_delta_time())
+	move_and_slide()
+
+func update_sound_source(sound_pos):
+	if can_hear:
+		sound_source = sound_pos
+		state = SOUND
 
 func idle():
 	footstep_sound.stop()
@@ -112,10 +145,11 @@ func _on_area_3d_area_entered(area):
 func stop_chase():
 	impact_sound.stop()
 	footstep_sound.stop()
-	state = IDLE
+	state = WANDER
 	light.hide()
 	env.volumetric_fog_emission = default_color
 	env.volumetric_fog_density = 0.3
+	sound_timer.start()
 
 func _on_chase_timer_timeout():
 	stop_chase()
@@ -131,3 +165,10 @@ func _on_navigation_agent_3d_target_reached():
 
 func _on_chase_cooldown_timeout():
 	start_chase()
+
+func _on_sound_timer_timeout():
+	can_hear = true
+
+
+func _on_kill_area_area_entered(area):
+	die.emit()
