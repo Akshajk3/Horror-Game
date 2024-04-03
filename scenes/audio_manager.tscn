@@ -1,0 +1,138 @@
+[gd_scene load_steps=44 format=3 uid="uid://dir6gqd0kqbc8"]
+
+[ext_resource type="Script" path="res://scripts/Audio Manager.gd" id="1_nvkoq"]
+[ext_resource type="AudioStream" uid="uid://de3w3wu3fw881" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (78).wav" id="2_l8gki"]
+[ext_resource type="AudioStream" uid="uid://codgxoejef82p" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (77).wav" id="3_udcxn"]
+[ext_resource type="AudioStream" uid="uid://crl0h5qsm1b4b" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (60).wav" id="4_h1je8"]
+[ext_resource type="AudioStream" uid="uid://cp05sle1svti6" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (59).wav" id="5_cqglk"]
+[ext_resource type="AudioStream" uid="uid://bbe8jhod73a28" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (58).wav" id="6_vk3ou"]
+[ext_resource type="AudioStream" uid="uid://qcrhf6rbitn7" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (57).wav" id="7_g6fir"]
+[ext_resource type="AudioStream" uid="uid://b3q112mtfgf8n" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (56).wav" id="8_3wwwb"]
+[ext_resource type="AudioStream" uid="uid://c2imr6c8o2hsi" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (55).wav" id="9_v3r33"]
+[ext_resource type="AudioStream" uid="uid://bfw3tcat1fgs6" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (54).wav" id="10_ne24a"]
+[ext_resource type="AudioStream" uid="uid://bu6t7nwyekfjg" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (53).wav" id="11_5l7mt"]
+[ext_resource type="AudioStream" uid="uid://cnliu7nbecqml" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (52).wav" id="12_wect5"]
+[ext_resource type="AudioStream" uid="uid://cyqnb8jp5wp2w" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (51).wav" id="13_08rgk"]
+[ext_resource type="AudioStream" uid="uid://7n1j0xrprkus" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (76).wav" id="14_grl4s"]
+[ext_resource type="AudioStream" uid="uid://dv2c3wkpimkmr" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (50).wav" id="15_cbvjr"]
+[ext_resource type="AudioStream" uid="uid://bq2x4k5jikttc" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (49).wav" id="16_o6jvu"]
+[ext_resource type="AudioStream" uid="uid://d1k5d0xthf4l6" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (13).wav" id="17_qtub7"]
+[ext_resource type="AudioStream" uid="uid://bcm7h78mxvjiv" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (12).wav" id="18_ediy0"]
+[ext_resource type="AudioStream" uid="uid://df8vkamsdh24w" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (11).wav" id="19_rghnj"]
+[ext_resource type="AudioStream" uid="uid://ck07k6x70qrr0" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (10).wav" id="20_poyxl"]
+[ext_resource type="AudioStream" uid="uid://db6hvm43l8vl5" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (9).wav" id="21_v052x"]
+[ext_resource type="AudioStream" uid="uid://bc18sy5t2seqc" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (8).wav" id="22_0ugkd"]
+[ext_resource type="AudioStream" uid="uid://cqjs01mgjxyof" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (7).wav" id="23_3fv8j"]
+[ext_resource type="AudioStream" uid="uid://dfhi6lwnk5pim" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (6).wav" id="24_k2wqa"]
+[ext_resource type="AudioStream" uid="uid://2jja11fs6ia7" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (73).wav" id="25_j3ba8"]
+[ext_resource type="AudioStream" uid="uid://c0727c2ratcv8" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (5).wav" id="26_pjt0w"]
+[ext_resource type="AudioStream" uid="uid://cy4c7kxa4ipv2" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (4).wav" id="27_1g11r"]
+[ext_resource type="AudioStream" uid="uid://68c55ghmergn" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (3).wav" id="28_y4pf6"]
+[ext_resource type="AudioStream" uid="uid://np8p8lfk1al2" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (2).wav" id="29_pxjm2"]
+[ext_resource type="AudioStream" uid="uid://sx8hm3a608x0" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (1).wav" id="30_5oniq"]
+[ext_resource type="AudioStream" uid="uid://chmf1eqwakten" path="res://sounds/Horror SFX Free/Ambient/Drone_doom.wav" id="31_3rqub"]
+[ext_resource type="AudioStream" uid="uid://bwy5k6gw2rdjr" path="res://sounds/Horror SFX Free/Ambient/Tap_reverb.wav" id="32_tfloi"]
+[ext_resource type="AudioStream" uid="uid://g1p5irejcfld" path="res://sounds/Horror SFX Free/Ambient/Old House_creeky metal and wood_ambiance_7.wav" id="33_66ncy"]
+[ext_resource type="AudioStream" uid="uid://b1jubvh1fxnie" path="res://sounds/Horror SFX Free/Stingers and Spooky Triggers/Scratch_high pitch.wav" id="34_cq63e"]
+[ext_resource type="AudioStream" uid="uid://be45e4mm1g5fp" path="res://sounds/Horror SFX Free/Monsters & Ghosts/Gore_mushy.wav" id="35_soish"]
+[ext_resource type="AudioStream" uid="uid://bfec7xs8ahcdf" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (71).wav" id="36_ntyw6"]
+[ext_resource type="AudioStream" uid="uid://hfkstcocs448" path="res://sounds/Horror SFX Free/House & Office/Slow crank.wav" id="37_gl716"]
+[ext_resource type="AudioStream" uid="uid://dfbaq7ai0m8ra" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (69).wav" id="38_epd40"]
+[ext_resource type="AudioStream" uid="uid://bsnonkrg4fhrl" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (68).wav" id="39_x3ke4"]
+[ext_resource type="AudioStream" uid="uid://de2ubnbndkba8" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (67).wav" id="40_v5kwq"]
+[ext_resource type="AudioStream" uid="uid://b1teyyjqw2kub" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (65).wav" id="41_b2jwj"]
+[ext_resource type="AudioStream" uid="uid://ch2dvk76djmy" path="res://sounds/Japanese-Style Horror SFX/Japanese-Style Horror SFX (61).wav" id="42_wtvcj"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_blk48"]
+playback_mode = 1
+streams_count = 41
+stream_0/stream = ExtResource("2_l8gki")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_udcxn")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("14_grl4s")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("25_j3ba8")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("36_ntyw6")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("38_epd40")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("39_x3ke4")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("40_v5kwq")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("41_b2jwj")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("42_wtvcj")
+stream_9/weight = 1.0
+stream_10/stream = ExtResource("4_h1je8")
+stream_10/weight = 1.0
+stream_11/stream = ExtResource("5_cqglk")
+stream_11/weight = 1.0
+stream_12/stream = ExtResource("6_vk3ou")
+stream_12/weight = 1.0
+stream_13/stream = ExtResource("7_g6fir")
+stream_13/weight = 1.0
+stream_14/stream = ExtResource("8_3wwwb")
+stream_14/weight = 1.0
+stream_15/stream = ExtResource("9_v3r33")
+stream_15/weight = 1.0
+stream_16/stream = ExtResource("10_ne24a")
+stream_16/weight = 1.0
+stream_17/stream = ExtResource("11_5l7mt")
+stream_17/weight = 1.0
+stream_18/stream = ExtResource("12_wect5")
+stream_18/weight = 1.0
+stream_19/stream = ExtResource("13_08rgk")
+stream_19/weight = 1.0
+stream_20/stream = ExtResource("15_cbvjr")
+stream_20/weight = 1.0
+stream_21/stream = ExtResource("16_o6jvu")
+stream_21/weight = 1.0
+stream_22/stream = ExtResource("17_qtub7")
+stream_22/weight = 1.0
+stream_23/stream = ExtResource("18_ediy0")
+stream_23/weight = 1.0
+stream_24/stream = ExtResource("19_rghnj")
+stream_24/weight = 1.0
+stream_25/stream = ExtResource("20_poyxl")
+stream_25/weight = 1.0
+stream_26/stream = ExtResource("21_v052x")
+stream_26/weight = 1.0
+stream_27/stream = ExtResource("22_0ugkd")
+stream_27/weight = 1.0
+stream_28/stream = ExtResource("23_3fv8j")
+stream_28/weight = 1.0
+stream_29/stream = ExtResource("24_k2wqa")
+stream_29/weight = 1.0
+stream_30/stream = ExtResource("26_pjt0w")
+stream_30/weight = 1.0
+stream_31/stream = ExtResource("27_1g11r")
+stream_31/weight = 1.0
+stream_32/stream = ExtResource("28_y4pf6")
+stream_32/weight = 1.0
+stream_33/stream = ExtResource("29_pxjm2")
+stream_33/weight = 1.0
+stream_34/stream = ExtResource("30_5oniq")
+stream_34/weight = 1.0
+stream_35/stream = ExtResource("31_3rqub")
+stream_35/weight = 1.0
+stream_36/stream = ExtResource("32_tfloi")
+stream_36/weight = 1.0
+stream_37/stream = ExtResource("33_66ncy")
+stream_37/weight = 1.0
+stream_38/stream = ExtResource("34_cq63e")
+stream_38/weight = 1.0
+stream_39/stream = ExtResource("35_soish")
+stream_39/weight = 1.0
+stream_40/stream = ExtResource("37_gl716")
+stream_40/weight = 1.0
+
+[node name="Audio Manager" type="Node3D"]
+script = ExtResource("1_nvkoq")
+stream = SubResource("AudioStreamRandomizer_blk48")
+
+[node name="Stinger Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Stinger Timer" to="." method="_on_stinger_timer_timeout"]

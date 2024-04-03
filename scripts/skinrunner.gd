@@ -1,17 +1,19 @@
 extends CharacterBody3D
 
 signal die()
+signal run()
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var impact_sound = $"impact sound"
 @onready var footstep_sound = $footsteps
-@onready var animation_player = $monster_model/AnimationPlayer
+@onready var animation_player = $"maxdamage_scab-low-poly/AnimationPlayer"
 @onready var chase_timer = $"Chase Timer"
 @onready var light = $OmniLight3D
 @onready var wander_timer = $"Wander Timer"
 @onready var sound_timer = $"Sound Timer"
+@onready var kill_timer = $"Kill Timer" 
 
-const SPEED = 6.0
+var SPEED = 6.0
 const ACCEL = 2.0
 
 enum {
@@ -35,6 +37,7 @@ var wander_position : Vector3
 var arrived = false
 var sound_source : Vector3
 var can_hear = true
+var spawn_point : Vector3
 
 func _ready():
 	world_env = get_parent().get_node("WorldEnvironment")
@@ -42,6 +45,7 @@ func _ready():
 	state = WANDER
 
 func _physics_process(delta):
+	
 	if state == CHASE:
 		chase(delta)
 	elif state == WANDER:
@@ -62,8 +66,8 @@ func chase(delta):
 	
 	look_at(player_position, Vector3.UP, true)
 	
-	if animation_player.current_animation != "run":
-		animation_player.play("run")
+	if animation_player.current_animation != "Walk":
+		animation_player.play("Walk")
 	
 	velocity = velocity.lerp(new_velocity * SPEED, ACCEL * delta)
 	move_and_slide()
@@ -85,10 +89,11 @@ func move_to_random_position(delta):
 
 func sound():
 	if arrived:
+		animation_player.play("Eat")
 		state = WANDER
 	else:
 		investigate_sound()
-		animation_player.play("run")
+		animation_player.play("Walk")
 
 func investigate_sound():
 	moving = true
@@ -112,18 +117,18 @@ func idle():
 	footstep_sound.stop()
 	impact_sound.stop()
 	
-	if animation_player.current_animation != "idle":
-		animation_player.play("idle")
+	if animation_player.current_animation != "Idle":
+		animation_player.play("Idle")
 
 func wander(delta):
 	if wander_position != Vector3.ZERO and arrived == false:
 		move_to_random_position(delta)
 	if moving:
-		if animation_player.current_animation != "run":
-			animation_player.play("run")
+		if animation_player.current_animation != "Walk":
+			animation_player.play("Walk")
 	else:
-		if animation_player.current_animation != "idle":
-			animation_player.play("idle")
+		if animation_player.current_animation != "Eat":
+			animation_player.play("Eat")
 
 func get_random_point():
 	var map_rid = get_world_3d().navigation_map
@@ -132,12 +137,14 @@ func get_random_point():
 	return random_point
 
 func start_chase():
-	state = CHASE
 	impact_sound.play()
 	footstep_sound.play()
 	chase_timer.start()
 	env.volumetric_fog_emission = chase_color
 	env.volumetric_fog_density = 0.6
+	nav_agent.target_desired_distance = 1
+	animation_player.play("Stun")
+	kill_timer.start()
 
 func _on_area_3d_area_entered(area):
 	start_chase()
@@ -150,6 +157,8 @@ func stop_chase():
 	env.volumetric_fog_emission = default_color
 	env.volumetric_fog_density = 0.3
 	sound_timer.start()
+	nav_agent.target_desired_distance = 3
+	light.hide()
 
 func _on_chase_timer_timeout():
 	stop_chase()
@@ -169,6 +178,8 @@ func _on_chase_cooldown_timeout():
 func _on_sound_timer_timeout():
 	can_hear = true
 
-
 func _on_kill_area_area_entered(area):
 	die.emit()
+
+func _on_kill_timer_timeout():
+	state = CHASE

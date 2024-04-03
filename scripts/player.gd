@@ -62,7 +62,7 @@ func _physics_process(delta):
 	else:
 		speed = WALK_SPEED
 		sprinting = false
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "front", "back")
@@ -129,6 +129,11 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	return pos
 
+func flicker():
+	for i in range(5):
+		flashlight.hide()
+		await get_tree().create_timer(0.1).timeout
+		flashlight.show()
 
 func _on_walk_timer_timeout():
 	walk_sound = true

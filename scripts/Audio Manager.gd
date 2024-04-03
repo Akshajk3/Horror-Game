@@ -13,7 +13,6 @@ func _ready():
 
 func play_sound(stream: AudioStream):
 	var instance = AudioStreamPlayer3D.new()
-	instance.transform.origin = player.transform.origin + random_position()
 	instance.stream = stream
 	instance.finished.connect(remove_node.bind(instance))
 	add_child(instance)
@@ -21,7 +20,7 @@ func play_sound(stream: AudioStream):
 
 func remove_node(instance: AudioStreamPlayer3D):
 	instance.queue_free()
-	timer.wait_time = get_random_time(5, 20)
+	timer.wait_time = get_random_time(10, 30)
 
 func _on_stinger_timer_timeout():
 	play_sound(stream)

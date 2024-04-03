@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgbgeaprsv0nk"]
+
+[ext_resource type="PackedScene" uid="uid://cqm03h47ixdcp" path="res://model/maxdamage_scab-low-poly_gltf/gltf/maxdamage_scab-low-poly.gltf" id="1_s1m7j"]
+
+[node name="maxdamage_scab-low-poly" instance=ExtResource("1_s1m7j")]
+
+[node name="Skeleton3D" parent="ScabArmature" index="0"]
+bones/1/rotation = Quaternion(-0.477582, 0.130075, -0.477812, 0.725735)
+bones/2/rotation = Quaternion(0.775271, -0.43385, 0.419385, -0.186669)
+bones/5/rotation = Quaternion(0.628627, 0.709348, 0.205005, -0.244186)
+bones/6/rotation = Quaternion(0.821164, 0.329113, -0.44421, -0.141605)
+bones/7/position = Vector3(0.223628, 0.56669, 0.356128)
+bones/8/rotation = Quaternion(0, -0.693721, 0, 0.720244)
+bones/11/rotation = Quaternion(0.496673, 0.503304, -0.496674, 0.503305)
+bones/12/rotation = Quaternion(-0.816467, -9.19875e-09, 6.94305e-07, 0.577392)
+bones/13/rotation = Quaternion(-0.295639, 0.0874489, -0.393217, 0.866216)
+bones/14/rotation = Quaternion(-0.428534, 0.787999, -0.338492, 0.284323)
+bones/15/rotation = Quaternion(-0.295152, -0.0671594, 0.372989, 0.877071)
+bones/16/rotation = Quaternion(0.428534, 0.787999, -0.338492, -0.284324)
+bones/19/rotation = Quaternion(0.708843, -1.11914e-08, -6.02752e-07, 0.705366)

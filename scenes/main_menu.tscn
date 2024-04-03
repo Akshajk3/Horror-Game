@@ -1,0 +1,127 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpyslihku02tg"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_mg1xe"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mg1xe")
+metadata/_edit_use_anchors_ = true
+
+[node name="How To Play" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="How To Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="How To Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.0148148
+anchor_right = 1.0
+anchor_bottom = 0.807407
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 9
+text = "In the eerie silence, a lurking predator awaits, attuned to the echoes of your every sound, as you navigate the shadows in a desperate bid for survival, collecting glowing gems to secure your escape.
+
+Controls: Shift - Sprint"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Button" type="Button" parent="How To Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.77037
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.17037
+grow_horizontal = 2
+text = "Spoopy Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Play Game Button" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.281481
+anchor_right = 1.0
+anchor_bottom = 0.511111
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit Game Button" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.518519
+anchor_right = 1.0
+anchor_bottom = 0.748148
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="How to Play button" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.755556
+anchor_right = 1.0
+anchor_bottom = 0.985185
+grow_horizontal = 2
+grow_vertical = 0
+text = "How To Play"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="How To Play/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Menu/Play Game Button" to="." method="_on_play_game_button_pressed"]
+[connection signal="pressed" from="Menu/Quit Game Button" to="." method="_on_quit_game_button_pressed"]
+[connection signal="pressed" from="Menu/How to Play button" to="." method="_on_how_to_play_button_pressed"]

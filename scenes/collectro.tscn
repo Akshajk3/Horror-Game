@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cff7t7rbhojce"]
+[gd_scene load_steps=11 format=3 uid="uid://cff7t7rbhojce"]
 
 [ext_resource type="Script" path="res://scripts/collectro.gd" id="1_hokel"]
 [ext_resource type="Shader" path="res://shaders/collectro.gdshader" id="2_m4eax"]
 [ext_resource type="AudioStream" uid="uid://cu3ux4236o14" path="res://sounds/pickup/Pickup_Coin12.wav" id="3_gh6d0"]
+[ext_resource type="AudioStream" uid="uid://bvmd2kjig5rin" path="res://sounds/Horror SFX Free/Ambient/Radio_static.wav" id="4_h51rc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2pge"]
 render_priority = -128
@@ -17,6 +18,21 @@ radial_segments = 4
 rings = 1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i1peu"]
+
+[sub_resource type="Animation" id="Animation_k8vmy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_871wc"]
 resource_name = "idkle"
@@ -33,21 +49,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.1, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_k8vmy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_veg33"]
@@ -80,6 +81,10 @@ libraries = {
 "": SubResource("AnimationLibrary_veg33")
 }
 autoplay = "idkle"
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_h51rc")
+volume_db = -10.0
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
