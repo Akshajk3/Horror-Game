@@ -47,9 +47,9 @@ func _ready():
 func _physics_process(delta):
 	
 	if state == CHASE:
-		chase(delta)
+		chase()
 	elif state == WANDER:
-		wander(delta)
+		wander()
 	elif state == SOUND:
 		sound()
 	elif state == IDLE:
@@ -59,7 +59,7 @@ func update_target_location(target_location):
 	nav_agent.target_position = target_location
 	player_position = target_location
 
-func chase(delta):
+func chase():
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position()
 	var new_velocity = (next_location - current_location).normalized() * SPEED
@@ -69,10 +69,10 @@ func chase(delta):
 	if animation_player.current_animation != "Walk":
 		animation_player.play("Walk")
 	
-	velocity = velocity.lerp(new_velocity * SPEED, ACCEL * delta)
+	velocity = velocity.lerp(new_velocity * SPEED, ACCEL * get_physics_process_delta_time())
 	move_and_slide()
 
-func move_to_random_position(delta):
+func move_to_random_position():
 	moving = true
 	var direction = Vector3()
 	
@@ -83,7 +83,7 @@ func move_to_random_position(delta):
 	
 	look_at(nav_agent.get_next_path_position(), Vector3.UP, true)
 	
-	velocity = velocity.lerp(direction * SPEED, ACCEL * delta)
+	velocity = velocity.lerp(direction * SPEED, ACCEL * get_physics_process_delta_time())
 	
 	move_and_slide()
 
@@ -120,9 +120,9 @@ func idle():
 	if animation_player.current_animation != "Idle":
 		animation_player.play("Idle")
 
-func wander(delta):
+func wander():
 	if wander_position != Vector3.ZERO and arrived == false:
-		move_to_random_position(delta)
+		move_to_random_position()
 	if moving:
 		if animation_player.current_animation != "Walk":
 			animation_player.play("Walk")
@@ -143,8 +143,8 @@ func start_chase():
 	env.volumetric_fog_emission = chase_color
 	env.volumetric_fog_density = 0.6
 	nav_agent.target_desired_distance = 1
-	animation_player.play("Stun")
-	kill_timer.start()
+	await get_tree().create_timer(2).timeout
+	state = CHASE
 
 func _on_area_3d_area_entered(area):
 	start_chase()
@@ -180,6 +180,3 @@ func _on_sound_timer_timeout():
 
 func _on_kill_area_area_entered(area):
 	die.emit()
-
-func _on_kill_timer_timeout():
-	state = CHASE

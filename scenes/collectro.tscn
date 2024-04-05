@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/collectro.gd" id="1_hokel"]
 [ext_resource type="Shader" path="res://shaders/collectro.gdshader" id="2_m4eax"]
-[ext_resource type="AudioStream" uid="uid://cu3ux4236o14" path="res://sounds/pickup/Pickup_Coin12.wav" id="3_gh6d0"]
-[ext_resource type="AudioStream" uid="uid://bvmd2kjig5rin" path="res://sounds/Horror SFX Free/Ambient/Radio_static.wav" id="4_h51rc"]
+[ext_resource type="AudioStream" path="res://sounds/pickup/Pickup_Coin12.wav" id="3_gh6d0"]
+[ext_resource type="AudioStream" path="res://sounds/Horror SFX Free/Ambient/Radio_static.wav" id="4_h51rc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2pge"]
 render_priority = -128

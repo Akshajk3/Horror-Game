@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cff7t7rbhojce" path="res://scenes/collectro.tscn" id="5_3chfe"]
 [ext_resource type="Texture2D" uid="uid://cv81cidqnbmyp" path="res://textures/it_steals_map.jpg" id="6_wekwg"]
 [ext_resource type="Shader" path="res://shaders/chromatic_abberation.gdshader" id="7_knpda"]
-[ext_resource type="AudioStream" uid="uid://d31235jyvxcpf" path="res://sounds/death/vox_Scream.wav" id="50_jn2hp"]
+[ext_resource type="AudioStream" path="res://sounds/death/vox_Scream.wav" id="50_jn2hp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7r47h"]
 shader = ExtResource("7_knpda")
@@ -190,12 +190,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.313, 0.200002, 31.6774)
 
 [node name="spawn point5" type="Node3D" parent="monster spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0024, 0.2, 6.85194)
-
-[node name="spawn point6" type="Node3D" parent="monster spawn points"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.9364, 0.199996, 37.3106)
-
-[node name="spawn point7" type="Node3D" parent="monster spawn points"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5382, 0.199996, -42.0268)
 
 [node name="spawn point8" type="Node3D" parent="monster spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.56691, 0.199996, -20.4423)
