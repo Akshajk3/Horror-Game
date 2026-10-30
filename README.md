@@ -4,7 +4,10 @@
 
 🎮 **[Download and play *Spoopy Game* on itch.io](https://clearcash.itch.io/horror-game)** (Windows, macOS, and Linux)
 
+> [!WARNING]
+> The Windows build on itch.io isn't working on my computer anymore, so it may not run for you either. The macOS and Linux builds should still run fine.
 
+https://github.com/user-attachments/assets/71f6a1b2-c4dc-415e-a34a-044cc6d84617
 
 > *In the eerie silence, a lurking predator awaits, attuned to the echoes of your every sound, as you navigate the shadows in a desperate bid for survival, collecting glowing gems to secure your escape.*
 
@@ -99,7 +102,7 @@ Horror-Game/
 3. Open Godot, click **Import**, and select the `project.godot` file.
 4. Press **F5** to play from the main menu.
 
-Or skip the setup and download a ready-to-play build from [itch.io](https://clearcash.itch.io/horror-game).
+Or skip the setup and download a ready-to-play build from [itch.io](https://clearcash.itch.io/horror-game). (The Windows build may not work; see the warning at the top.)
 
 > [!NOTE]
 > **The game's sound files were lost and are not included in this repo.** The scenes still reference about 55 audio files in a `sounds/` folder (footsteps, breathing, the monster's footsteps and "spotted" sound, ambient drones, random stingers, the heartbeat, the death scream, and the flashlight and pickup sounds), so Godot will show missing-resource errors when the project opens, and the game has no sound. Since so much of the game depends on audio (the stealth mechanic is built around sound), the best way to play is the [itch.io build](https://clearcash.itch.io/horror-game), which was exported before the files were lost and still includes all the original audio.
